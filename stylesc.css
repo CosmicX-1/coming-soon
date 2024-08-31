@@ -1,0 +1,270 @@
+/* Base styles (Desktop) */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 4vh;
+}
+
+.logo {
+  height: 12vh;
+  width: auto;
+}
+
+.about {
+  background: transparent;
+  border: 0.2vh solid #fff;
+  outline: none;
+  padding: 1.5vh 3vh;
+  color: #fff;
+  margin-top: 2vh;
+  cursor: pointer;
+  transition: ease-in-out 0.3s all;
+  font-size: 2vh;
+}
+
+.about:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.aboutBox {
+  font-family: "Lato", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  max-width: 75vh;
+  height: 70vh;
+  padding: 4vh;
+  background-color: #ffffffe5;
+  color: #333;
+  border-radius: 1vh;
+  box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.aboutBox.show {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.aboutBox h2 {
+  position: absolute;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5vh;
+  font-size: 3vh;
+}
+
+.devs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3vh;
+}
+.dev {
+  width: 15vw; /* 20% of viewport width */
+  height: 40vh; /* 25% of viewport height */
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+  background-color: #ff3753;
+  color: #000;
+  border-radius: 1vh;
+  text-align: center;
+  box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+}
+
+.dev-dp {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1.5vh;
+}
+
+h3 {
+  margin-bottom: 0.5vh;
+  font-size: 3.1vh;
+}
+
+p {
+  margin-bottom: 1vh;
+  font-size: 2.5vh;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1vh;
+  font-size: 2vh;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
+.dev {
+  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3vh;
+  background-color: #ff3753;
+  color: #000;
+  border-radius: 1vh;
+  text-align: center;
+  box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+}
+
+.dev-dp {
+  width: 12vh;
+  height: 12vh;
+  border-radius: 50%;
+  margin-bottom: 1.5vh;
+}
+
+h3 {
+  margin-bottom: 0.5vh;
+}
+
+p {
+  margin-bottom: 1vh;
+}
+
+.social-links {
+  margin-top: 1vh;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1vh;
+  font-size: 2.5vh;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  background: none;
+  border: none;
+  font-size: 3vh;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  nav {
+    padding: 1vh 2vh;
+  }
+
+  .logo {
+    height: 8vh;
+  }
+
+  .about {
+    padding: 1vh 2vh;
+    font-size: 1.6vh;
+  }
+
+  .aboutBox {
+    width: 90vw;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    padding: 2vh;
+    overflow-y: auto;
+  }
+
+  .aboutBox h2 {
+    font-size: 2.5vh;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5vh;
+  }
+
+  .devs {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .dev {
+    width: 100%;
+    padding: 2vh;
+  }
+
+  .dev-dp {
+    width: 12vh;
+    height: 12vh;
+  }
+
+  .social-links a {
+    font-size: 2.5vh;
+  }
+
+  .close-btn {
+    font-size: 2.5vh;
+  }
+}
+
+/* Responsive styles for landscape orientation on mobile */
+@media (orientation: landscape) and (max-width: 768px) {
+  .aboutBox {
+    width: 80vw;
+    max-width: 80vw;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  .devs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .dev {
+    width: calc(50% - 1vh);
+    flex: 0 0 auto;
+  }
+}
+
+/* Ensure centering for all screen sizes */
+@media (max-width: 1024px) {
+  .aboutBox {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

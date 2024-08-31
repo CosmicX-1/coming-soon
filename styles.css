@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+.container {
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(100, 0, 200, 0.5)
+    ),
+    url("images/desktop.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.footer {
+  width: 100%;
+  padding: 6px 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9); /* Match the overlay gradient */
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 150px;
+  cursor: pointer;
+}
+.logo {
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.content {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.content h1 span {
+  color: #ff3753;
+}

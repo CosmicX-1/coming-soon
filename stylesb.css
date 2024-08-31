@@ -1,0 +1,199 @@
+#contact_btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  border: 0.125em solid #fff;
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#contact_btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  transform: translateX(-100%) translateY(0);
+  transition: transform 0.4s ease;
+}
+
+#contact_btn.slide-left:before {
+  transform: translateX(-100%);
+}
+
+#contact_btn.slide-right:before {
+  transform: translateX(100%);
+}
+
+#contact_btn.slide-top:before {
+  transform: translateY(-100%);
+}
+
+#contact_btn.slide-bottom:before {
+  transform: translateY(100%);
+}
+
+#contact_btn:hover {
+  color: #000000;
+}
+
+#contact_btn:hover:before {
+  transform: translateX(0) translateY(0);
+}
+
+.content button {
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  padding: 12px 25px;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s all;
+}
+
+.contactBox button {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  z-index: 1;
+}
+
+.contactBox button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ff3753;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.contactBox button:hover:before {
+  width: 100%;
+}
+
+.content button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+.contactBox {
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  padding: 30px;
+  background-color: #ffffffb2;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.contactBox.show {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contactBox h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.contactBox form {
+  width: 100%;
+}
+
+.contactBox label {
+  display: block;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #555;
+}
+
+.contactBox input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 1em;
+}
+
+.contactBox button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.contactBox button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .contactBox {
+    width: 75%;
+    max-width: none;
+    padding: 20px;
+    top: 20%;
+    left: 15%;
+  }
+
+  .contactBox h2 {
+    font-size: 1.5em;
+  }
+
+  .contactBox input,
+  .contactBox button {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .contactBox label {
+    font-size: 0.9em;
+  }
+}
